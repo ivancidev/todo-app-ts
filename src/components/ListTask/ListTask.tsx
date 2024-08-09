@@ -47,14 +47,14 @@ export const ListTask = () => {
         <Button handleTask={addTask} text="Add Task" />
       </div>
       <div className="container-list">
-        {tasks.map((task, index) => (
+        {tasks.length !== 0 ? (tasks.map((task, index) => (
           <TaskItem
             key={index}
             task={task}
             removeTask={() => removeTask(index)}
             openEditModal = {() => handleEditTask(index)}
           />
-        ))}
+        ))): "No existen tareas"}
       </div>
       {isEditTask && currentTask && (
         <EditTaskModal task={currentTask} onCloseTask={() => setIsEditTask(false)} onSaveTask={editTask}/>
