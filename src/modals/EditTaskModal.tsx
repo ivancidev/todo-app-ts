@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { Task } from "../interfaces/task";
-import './EditTaskModal.css'
+import "./EditTaskModal.css";
+import { Button } from "../components/Button/Button";
+import Input from "../components/Input/Input";
 
 type Props = {
   task: Task;
@@ -18,13 +20,11 @@ export const EditTaskModal = ({ task, onCloseTask, onSaveTask }: Props) => {
     <div className="modal-background">
       <div className="modal-content">
         <h2>Edit Task</h2>
-        <input
-          type="text"
-          value={editTask}
-          onChange={(e) => setEditTask(e.target.value)}
-        />
-        <button onClick={handleSave}>Save</button>
-        <button onClick={onCloseTask}>Cancel</button>
+        <Input task={editTask} onTaskChange={(e) => setEditTask(e.target.value)}/>
+        <div className="button-group">
+          <Button handleTask={handleSave} text="Save" />
+          <Button handleTask={onCloseTask} text="Close" />
+        </div>
       </div>
     </div>
   );
