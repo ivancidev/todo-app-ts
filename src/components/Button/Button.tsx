@@ -1,14 +1,15 @@
-import React from 'react';
-import './Button.css'
+import React from "react";
+import "./Button.css";
 type Props = {
-  addTask: () => void;
+  handleTask: () => void;
+  text: string;
 };
 
-export const Button: React.FC<Props> = ({ addTask }) => {
+export const Button: React.FC<Props> = ({ handleTask, text }) => {
   return (
     <>
-      <button className="btn btn-primary" type="button" onClick={addTask}>
-        Add Task
+      <button className="btn btn-primary" type="button" onClick={handleTask}>
+        {text}
       </button>
     </>
   );
