@@ -1,4 +1,4 @@
-import "./Task.css";
+import "./TaskItem.css";
 import { MdDeleteForever } from "react-icons/md";
 import { RiEdit2Fill } from "react-icons/ri";
 
