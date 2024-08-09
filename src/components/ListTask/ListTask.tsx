@@ -2,6 +2,7 @@ import { useState } from "react";
 import Input from "../Input/Input";
 import "./ListTask.css";
 import { Button } from "../Button/Button";
+import { Task } from "../Task/Task";
 
 export const ListTask = () => {
   const [newTask, setNewTask] = useState("");
@@ -10,8 +11,13 @@ export const ListTask = () => {
     if (newTask) {
       setTasks([...tasks, newTask]);
       setNewTask("");
-      console.log(tasks);
     }
+  };
+
+  const removeTask = (index: number) => {
+    const newTasks = [...tasks];
+    newTasks.splice(index, 1);
+    setTasks(newTasks);
   };
 
   return (
@@ -21,16 +27,12 @@ export const ListTask = () => {
           task={newTask}
           onTaskChange={(e) => setNewTask(e.target.value)}
         />
-        <Button addTask={addTask} />
+        <Button handleTask={addTask} text="Add Task" />
       </div>
       <div className="container-list">
-        <ul className="list-group">
-          {tasks.map((task, index) => (
-            <li key={index} className="list-group-item">
-              {task}
-            </li>
-          ))}
-        </ul>
+        {tasks.map((task, index) => (
+          <Task key={index} task={task} removeTask={() => removeTask(index)} />
+        ))}
       </div>
     </>
   );
