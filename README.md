@@ -1,50 +1,35 @@
-# React + TypeScript + Vite
+# Todo List App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Una aplicación de lista de tareas construida con **React**, **TypeScript**, y **Bootstrap**. Esta aplicación permite a los usuarios agregar, eliminar y editar tareas, y utiliza **React Icons** para la interfaz de usuario.
 
-Currently, two official plugins are available:
+## Características
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Agregar Tareas**: Los usuarios pueden agregar nuevas tareas a la lista.
+- **Eliminar Tareas**: Los usuarios pueden eliminar tareas existentes.
+- **Editar Tareas**: Los usuarios pueden editar tareas haciendo clic en el icono de edición.
+- **Interfaz de Usuario**: Utiliza Bootstrap para el diseño y React Icons para los iconos.
 
-## Expanding the ESLint configuration
+## Screenshot
+[![Captura-de-pantalla-2024-08-09-123312.png](https://i.postimg.cc/Wb5jw1FX/Captura-de-pantalla-2024-08-09-123312.png)](https://postimg.cc/nC96HZ1D)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Instalación
 
-- Configure the top-level `parserOptions` property like this:
+1. **Clonar el repositorio**:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+   ```
+   git clone https://github.com/ivancidev/todo-app-ts.git
+   ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+2. **Navegar al directorio del proyecto:**
+   ```
+    cd proyect-typescript
+   ```
+3. **Instalar dependencias:**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+    ```
+    npm install
+    ```
+4. **Iniciar la aplicación:**
+    ```
+    npm run dev
+    ```
